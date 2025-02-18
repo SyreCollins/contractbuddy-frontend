@@ -14,7 +14,7 @@ export default function Footer() {
             <span className="sr-only">Instagram</span>
             <Instagram className="h-6 w-6" />
           </Link>
-          <Link href="https://www.youtube.com/@syrecolllins" className="text-gray-400 hover:text-gray-500">
+          <Link href="https://www.youtube.com/@syrecollins" className="text-gray-400 hover:text-gray-500">
             <span className="sr-only">YouTube</span>
             <Youtube className="h-6 w-6" />
           </Link>

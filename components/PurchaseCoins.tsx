@@ -137,15 +137,13 @@ export default function PurchaseCoins() {
   }
 
   const config = {
-    reference: (plan: string, tokens: number) => `${new Date().getTime()}-${tokens}-${plan}`,
+    reference: (plan: string, tokens: number) =>
+      `${new Date().getTime()}_${tokens}_${plan.replace(/[^a-zA-Z0-9]/g, "")}`,
     email: session?.user.email || "",
     publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || "",
   }
 
-  const formatPrice = (priceUSD: number, plan: string) => {
-    if (plan === "Lifetime") {
-      return "∞"
-    }
+  const formatPrice = (priceUSD: number) => {
     if (showNaira) {
       return `₦${(priceUSD * EXCHANGE_RATE).toLocaleString()}`
     }
@@ -254,9 +252,7 @@ export default function PurchaseCoins() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white">
-                    {formatPrice(5, "Basic")}
-                  </p>
+                  <p className="text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white">{formatPrice(5)}</p>
                   <ul className="mb-8 space-y-2">
                     <li className="flex items-center justify-center">
                       <CheckCircle className="w-5 h-5 mr-2 text-green-500" />
@@ -289,9 +285,7 @@ export default function PurchaseCoins() {
                   <CardDescription className="text-center">Perfect for growing needs</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white">
-                    {formatPrice(10, "Basic+")}
-                  </p>
+                  <p className="text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white">{formatPrice(10)}</p>
                   <ul className="mb-8 space-y-2">
                     <li className="flex items-center justify-center">
                       <CheckCircle className="w-5 h-5 mr-2 text-green-500" />
@@ -321,9 +315,7 @@ export default function PurchaseCoins() {
                   <CardDescription className="text-center">For power users and businesses</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white">
-                    {formatPrice(20, "Premium")}
-                  </p>
+                  <p className="text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white">{formatPrice(20)}</p>
                   <ul className="mb-8 space-y-2">
                     <li className="flex items-center justify-center">
                       <CheckCircle className="w-5 h-5 mr-2 text-green-500" />
@@ -358,9 +350,7 @@ export default function PurchaseCoins() {
                 <CardDescription className="text-center">Unlimited Contract-AI tokens forever</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white">
-                  {formatPrice(200, "Lifetime")}
-                </p>
+                <p className="text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white">{formatPrice(200)}</p>
                 <ul className="mb-8 space-y-2">
                   <li className="flex items-center justify-center">
                     <CheckCircle className="w-5 h-5 mr-2 text-green-500" />

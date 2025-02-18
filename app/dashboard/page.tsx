@@ -29,40 +29,40 @@ export default function Dashboard() {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="border-b">
-        <div className="flex h-16 items-center px-4">
-          <div className="flex items-center space-x-4">
-            <LayoutDashboard className="h-8 w-8 text-blue-600" />
+        <div className="flex flex-col md:flex-row md:items-center justify-between px-4 py-4 md:h-16">
+          <div className="flex items-center mb-4 md:mb-0">
+            <LayoutDashboard className="h-8 w-8 text-blue-600 mr-2" />
             <h1 className="text-2xl font-semibold">ContractBuddy</h1>
           </div>
-          <div className="ml-auto flex items-center space-x-4">
+          <div className="flex items-center space-x-4">
             <ModeToggle />
             <UserNav />
           </div>
         </div>
       </header>
-      <main className="flex-1 p-6">
-        <Tabs defaultValue="analyze" className="space-y-6" onValueChange={(value) => setActiveTab(value)}>
-          <TabsList>
-            <TabsTrigger value="analyze">
+      <main className="flex-1 p-4 md:p-6 overflow-auto">
+        <Tabs defaultValue="analyze" className="space-y-4 md:space-y-6" onValueChange={(value) => setActiveTab(value)}>
+          <TabsList className="flex flex-wrap justify-start gap-2">
+            <TabsTrigger value="analyze" className="flex-grow md:flex-grow-0">
               <FileText className="mr-2 h-4 w-4" />
               Analyze Contract
             </TabsTrigger>
-            <TabsTrigger value="draft">
+            <TabsTrigger value="draft" className="flex-grow md:flex-grow-0">
               <PenTool className="mr-2 h-4 w-4" />
               Draft Contract
             </TabsTrigger>
-            <TabsTrigger value="share">
+            <TabsTrigger value="share" className="flex-grow md:flex-grow-0">
               <Share2 className="mr-2 h-4 w-4" />
               Share Tokens
             </TabsTrigger>
           </TabsList>
-          <TabsContent value="analyze" className="space-y-6">
+          <TabsContent value="analyze" className="space-y-4 md:space-y-6">
             <AnalyzeContract />
           </TabsContent>
-          <TabsContent value="draft" className="space-y-6">
+          <TabsContent value="draft" className="space-y-4 md:space-y-6">
             <DraftContract />
           </TabsContent>
-          <TabsContent value="share" className="space-y-6">
+          <TabsContent value="share" className="space-y-4 md:space-y-6">
             <ShareTokens />
           </TabsContent>
         </Tabs>

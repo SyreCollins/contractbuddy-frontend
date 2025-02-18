@@ -54,7 +54,6 @@ export function RegisterForm() {
           data: {
             name,
           },
-          emailRedirectTo: `${window.location.origin}/verify-email`,
         },
       })
 
@@ -65,10 +64,10 @@ export function RegisterForm() {
       if (data.user) {
         toast({
           title: "Registration Successful",
-          description: "Please check your email to verify your account.",
+          description: "Welcome to ContractBuddy!",
           duration: 5000,
         })
-        router.push("/verify-email")
+        router.push("/purchase-coins")
       }
     } catch (error: any) {
       setError(error.message)

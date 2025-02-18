@@ -8,6 +8,7 @@ import FAQ from "@/components/FAQ"
 import Pricing from "@/components/Pricing"
 import Footer from "@/components/Footer"
 import UserCount from "@/components/UserCount"
+import WhyContractBuddy from "@/components/WhyContractBuddy"
 
 export default function LandingPage() {
   return (
@@ -16,6 +17,7 @@ export default function LandingPage() {
       <main>
         <Hero />
         <UserCount />
+        <WhyContractBuddy />
         <KeyFeatures />
         <Features />
         <DemoVideo />

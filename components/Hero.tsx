@@ -14,15 +14,10 @@ export default function Hero() {
 
   return (
     <section className="pt-20 pb-32 bg-gradient-to-b from-blue-50 to-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center md:text-left md:flex md:items-center md:justify-between">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="md:w-1/2"
-          >
-            <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl tracking-tight font-extrabold text-gray-900 mb-6">
               <span className="block">Simplify Your</span>
               <span className="block text-blue-600">Legal Contracts</span>
             </h1>
@@ -30,7 +25,7 @@ export default function Hero() {
               ContractBuddy uses AI to help you understand, analyze, and manage contracts with ease. Perfect for
               non-lawyers and businesses of all sizes.
             </p>
-            <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:justify-start md:mt-8">
+            <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
               <div className="rounded-md shadow">
                 <Link
                   href="/register"
@@ -50,11 +45,10 @@ export default function Hero() {
                 </button>
               </div>
             </div>
-            <div className="mt-5 text-sm text-gray-500">
-              <p>Only Pay for what you use • No hidden fees • Use anytime</p>
-            </div>
           </motion.div>
-          
+          <div className="mt-5 text-sm text-gray-500">
+            <p>Only Pay for what you use • No hidden fees • Use anytime</p>
+          </div>
         </div>
       </div>
       <VideoModal isOpen={showModal} onClose={closeModal} />
