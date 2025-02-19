@@ -114,21 +114,24 @@ export function UserNav() {
         <DropdownMenuGroup>
           <DropdownMenuItem onClick={handlePurchaseCoins}>
             <CreditCard className="mr-2 h-4 w-4" />
-            Purchase Coins
+            <span>Purchase Coins</span>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={() => router.push("/settings")}>
             <Settings className="mr-2 h-4 w-4" />
-            Settings
+            <span>Settings</span>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <Coins className="mr-2 h-4 w-4" />
-            Tokens: {hasLifetimePlan ? <Infinity className="inline-block ml-1 h-4 w-4 text-yellow-500" /> : userTokens}
+            <span>
+              Tokens:{" "}
+              {hasLifetimePlan ? <Infinity className="inline-block ml-1 h-4 w-4 text-yellow-500" /> : userTokens}
+            </span>
           </DropdownMenuItem>
           {isAdmin && (
             <DropdownMenuItem asChild>
               <Link href="/admin">
                 <ShieldAlert className="mr-2 h-4 w-4" />
-                Admin Panel
+                <span>Admin Panel</span>
               </Link>
             </DropdownMenuItem>
           )}
@@ -136,7 +139,7 @@ export function UserNav() {
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handleSignOut}>
           <LogOut className="mr-2 h-4 w-4" />
-          Log out
+          <span>Log out</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -66,6 +66,12 @@
   }
 }
 
+@layer utilities {
+  .break-word {
+    word-break: break-word;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -180,5 +186,11 @@
 .faq-item {
   opacity: 0;
   animation: slideIn 0.5s ease-out forwards;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
 }
 
